@@ -12,10 +12,10 @@ O projeto [Checkstyle.org](https://checkstyle.sourceforge.io/) fornece uma compl
 Existe a intenção futura de que possa analisar projetos implementados em outras linguagens de programação.
 
 ## Funcionalidades
-- Calcula a Complexidade Aciclomática de todas as classes do projeto.
+- Calcula a Complexidade ciclomática de todas as classes do projeto.
 
 ## Como usar
-Faça o download da última versão. Não é necessário nenhuma instalação, apenas que exista o java instalado na máquina. O diretório da aplicação possui o executável .jar e um diretório tools que possui arquivos de configurações necessárias para o funcionamento do software. Execute o arquivo .jar e siga as instruções em tela.
+Faça o download da última versão compactada em .zip na página de [releases](https://github.com/fabiosperotto/simplecodemetrics/releases). Não é necessário nenhuma instalação, apenas que exista o java instalado na máquina. O diretório da aplicação possui o executável .jar e um diretório tools que possui arquivos de configurações necessárias para o funcionamento do software. Execute o arquivo .jar e siga as instruções em tela.
 
 ## Compatibilidade e Testes
 - Java JDK 18 ou superior (existe um executável para Java 8);

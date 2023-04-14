@@ -18,7 +18,7 @@ There is a future intention to be able to analyze projects implemented in other 
 
 
 ## How to use
-Download the latest version. Needs only the Java JDK installed on the machine. The application directory has the .jar executable and a tools directory that has the necessary configuration files for the software to work. Run the .jar file and follow the onscreen instructions.
+Download the latest .zip compressed version from the [releases](https://github.com/fabiosperotto/simplecodemetrics/releases) page. Needs only the Java JDK installed on the machine. The application directory has the .jar executable and a tools directory that has the necessary configuration files for the software to work. Run the .jar file and follow the onscreen instructions.
 
 ## Compatibility
 - Java JDK 18 or above (there is an executable for Java 8);

@@ -3,11 +3,7 @@ package org.engmetrics.gui;
 
 import org.engmetrics.cli.TerminalProcess;
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * The main project window class to interact with users

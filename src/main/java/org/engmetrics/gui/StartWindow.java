@@ -130,16 +130,18 @@ public class StartWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
-        JFileChooser windowUpload = new JFileChooser();
-        windowUpload.setDialogTitle("Choose file");
-        windowUpload.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        
-        int userAnswer = windowUpload.showOpenDialog(this);
-        if (userAnswer == JFileChooser.APPROVE_OPTION){ //user selected something
-            this.selectedDirectory = windowUpload.getSelectedFile();
+       JFileChooser fc = new JFileChooser();
+        fc.setDialogType(JFileChooser.OPEN_DIALOG);
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        File initialDir = new File("./");
+        fc.setCurrentDirectory(initialDir);
+        fc.setDialogTitle("Choose file");
+        int returnVal = fc.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            this.selectedDirectory = fc.getSelectedFile();
             this.txtLocation.setText(this.selectedDirectory.getAbsolutePath());
             this.txtResults.setText("Folder selected, click on Start Analysis (click and wait).");
-        }
+        } 
     }//GEN-LAST:event_btnUploadActionPerformed
 
     /**
@@ -152,7 +154,8 @@ public class StartWindow extends javax.swing.JFrame {
             this.txtResults.setText("You need to set a source code path to run this analysis \n");
         
         }else{
-            TerminalProcess terminal = new TerminalProcess("java -jar", "tools/checkstyle.jar", "tools/config.xml", this.txtLocation.getText());
+            String formatPath = "\"" + this.txtLocation.getText() + "\"";
+            TerminalProcess terminal = new TerminalProcess("java -jar", "tools/checkstyle.jar", "tools/config.xml", formatPath);
             boolean success = terminal.runCommand();
             if(success){
                 this.txtResults.setText(this.txtResults.getText() + terminal.getOutputText());
